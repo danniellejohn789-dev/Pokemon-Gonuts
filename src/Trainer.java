@@ -38,12 +38,15 @@ class Trainer{
 		}
 		*/
 
-		starter.hurtWild(wild);
-
-		System.out.print(": ");
-		int ano = Integer.parseInt(Main.sml.nextLine());
+		starter.playerTurn(wild);
 	}
-
-
+    
+    void winBattle(Pokemon wild){
+        if (wild.hp <= 0){
+            wins += 1;
+            System.out.println(wild.name + " Faints");
+            System.out.println("Game over: " + wins);
+        }
+    }
 
 }

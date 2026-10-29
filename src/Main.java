@@ -38,7 +38,7 @@ class Main{
 		
 		while (trainer.starter.hp > 0){
 			Pokemon wild = Pokemon.randomWild(wildNames, wildTypes);
-			battle(trainer, wild);
+   			battle(trainer, wild);
 		}
 	}
 
@@ -47,12 +47,11 @@ class Main{
 
 		while (wild.hp > 0 && trainer.starter.hp > 0){
 			trainer.playerTurn(wild);
-			return;
-			/*
-			if (trainer.start.hp > 0){
-				trainer.winBattle(wild);
+            wild.wildTurn(trainer);
+            //return, bakit hindi nya sinasama yung wildTurn pag nag loloop?			
+			if (trainer.starter.hp > 0){
+   				trainer.winBattle(wild);
 			}
-			*/
 		}
 
 	}
